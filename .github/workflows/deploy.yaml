@@ -24,7 +24,9 @@ jobs:
         run: echo "${{secrets.CLIENT_ENV}}" > .env
 
       - name: Install dependencies and build
-        run: npm ci
+        run: |
+          npm ci
+          npm run build
 
       - name: Start application
         run: pm2 restart site || pm2 start npm --name "site" -- run start
