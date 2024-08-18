@@ -28,6 +28,3 @@ jobs:
 
       - name: Start application
         run: pm2 restart site || pm2 start npm --name "site" -- run start
-
-      - name: Reload Nginx
-        run: sudo service nginx restart
